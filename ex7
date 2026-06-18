@@ -1,5 +1,8 @@
-SELECT * 
-FROM OrderDetails
-WHERE Quantity
-ORDER BY ProductID ASC
-LIMIT 20;
+SELECT *
+FROM (
+    SELECT *
+    FROM OrderDetails
+    ORDER BY Quantity ASC
+    LIMIT 8
+) AS MaioresQuantidades
+ORDER BY ProductID;
